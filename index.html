@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Songo - Le Jeu d'Intelligence Traditionnel</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -25,7 +25,8 @@
         <div id="menu-levels" class="menu-screen hidden">
             <h2>MODE CAMPAGNE</h2>
             <p class="level-instructions">Validez chaque niveau pour débloquer le suivant (1 à 35).</p>
-            <div class="levels-grid" id="levels-grid"></div>
+            <div class="levels-grid" id="levels-grid">
+                </div>
             <button class="btn-menu secondary" id="btn-levels-back">Retour au menu</button>
         </div>
 
@@ -53,30 +54,30 @@
             <div class="avatar" id="p2-avatar">👤</div>
             <div class="player-info">
                 <h2 id="p2-name">JOUEUR 2</h2>
-                <p>Graines : <span id="score-p2" class="score-val">0</span></p>
+                <p>Graines capturées : <span id="score-p2" class="score-val">0</span></p>
             </div>
         </div>
 
         <div class="board-wrapper">
             <div class="board">
                 <div class="row row-top">
-                    <div class="pit" data-index="13" id="pit-13"><span class="pit-label">13</span><div class="seeds-container"></div></div>
-                    <div class="pit" data-index="12" id="pit-12"><span class="pit-label">12</span><div class="seeds-container"></div></div>
-                    <div class="pit" data-index="11" id="pit-11"><span class="pit-label">11</span><div class="seeds-container"></div></div>
-                    <div class="pit" data-index="10" id="pit-10"><span class="pit-label">10</span><div class="seeds-container"></div></div>
-                    <div class="pit" data-index="9" id="pit-9"><span class="pit-label">9</span><div class="seeds-container"></div></div>
-                    <div class="pit" data-index="8" id="pit-8"><span class="pit-label">8</span><div class="seeds-container"></div></div>
-                    <div class="pit" data-index="7" id="pit-7"><span class="pit-label">7</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="13" id="pit-13"><span class="pit-label">12</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="12" id="pit-12"><span class="pit-label">11</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="11" id="pit-11"><span class="pit-label">10</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="10" id="pit-10"><span class="pit-label">9</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="9" id="pit-9"><span class="pit-label">8</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="8" id="pit-8"><span class="pit-label">7</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="7" id="pit-7"><span class="pit-label">6</span><div class="seeds-container"></div></div>
                 </div>
 
                 <div class="row row-bottom">
-                    <div class="pit" data-index="0" id="pit-0"><span class="pit-label">0</span><div class="seeds-container"></div></div>
-                    <div class="pit" data-index="1" id="pit-1"><span class="pit-label">1</span><div class="seeds-container"></div></div>
-                    <div class="pit" data-index="2" id="pit-2"><span class="pit-label">2</span><div class="seeds-container"></div></div>
-                    <div class="pit" data-index="3" id="pit-3"><span class="pit-label">3</span><div class="seeds-container"></div></div>
-                    <div class="pit" data-index="4" id="pit-4"><span class="pit-label">4</span><div class="seeds-container"></div></div>
-                    <div class="pit" data-index="5" id="pit-5"><span class="pit-label">5</span><div class="seeds-container"></div></div>
-                    <div class="pit" data-index="6" id="pit-6"><span class="pit-label">6</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="0" id="pit-0"><span class="pit-label">1</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="1" id="pit-1"><span class="pit-label">2</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="2" id="pit-2"><span class="pit-label">3</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="3" id="pit-3"><span class="pit-label">4</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="4" id="pit-4"><span class="pit-label">5</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="5" id="pit-5"><span class="pit-label">6</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="6" id="pit-6"><span class="pit-label">7</span><div class="seeds-container"></div></div>
                 </div>
             </div>
         </div>
@@ -85,13 +86,13 @@
             <div class="avatar">👤</div>
             <div class="player-info">
                 <h2>JOUEUR 1 (VOUS)</h2>
-                <p>Graines : <span id="score-p1" class="score-val">0</span></p>
+                <p>Graines capturées : <span id="score-p1" class="score-val">0</span></p>
             </div>
         </div>
 
         <footer class="game-controls">
-            <button id="btn-undo" class="btn secondary-game-btn" disabled>↩️ ANNULER</button>
-            <button id="btn-quit" class="btn">QUITTER</button>
+            <button id="btn-undo" class="btn secondary-game-btn" disabled>↩️ ANNULER LE COUP</button>
+            <button id="btn-quit" class="btn">QUITTER LA PARTIE</button>
         </footer>
     </div>
 
