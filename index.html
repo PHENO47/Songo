@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Songo - Le Jeu d'Intelligence Traditionnel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="animation-layer"></div>
+
+    <div id="main-menu" class="menu-container">
+        <header class="menu-header">
+            <h1 class="logo-title">SONGO</h1>
+            <p class="logo-subtitle">LE JEU D'INTELLIGENCE ET DE STRATÉGIE</p>
+        </header>
+
+        <div id="menu-home" class="menu-screen">
+            <button class="btn-menu primary" id="btn-mode-pvp">👥 JOUER À DEUX (MÊME ÉCRAN)</button>
+            <button class="btn-menu primary" id="btn-mode-ai">🤖 MODE CAMPAGNE (VS MACHINE)</button>
+            <button class="btn-menu" id="btn-goto-rules">📜 RÈGLES DU JEU</button>
+        </div>
+
+        <div id="menu-levels" class="menu-screen hidden">
+            <h2>MODE CAMPAGNE</h2>
+            <p class="level-instructions">Validez chaque niveau pour débloquer le suivant (1 à 35).</p>
+            <div class="levels-grid" id="levels-grid"></div>
+            <button class="btn-menu secondary" id="btn-levels-back">Retour au menu</button>
+        </div>
+
+        <div id="menu-rules" class="menu-screen hidden">
+            <h2>RÈGLES DU JEU</h2>
+            <div class="rules-text">
+                <h3>But du jeu</h3>
+                <p>Le but est de capturer un maximum de graines. La partie se termine lorsqu'un joueur n'a plus de graines dans son camp ou ne peut plus effectuer de coup légal.</p>
+                <h3>Le Semis (Sens Horaire)</h3>
+                <p>Le joueur choisit une case de son camp. Il prend toutes les graines qu'elle contient et les distribue une par une, case après case, dans le <strong>sens des aiguilles d'une montre</strong>.</p>
+                <h3>La Capture (La Rafle)</h3>
+                <p>Si la dernière graine distribuée tombe dans le camp de l'adversaire et que cette case contient désormais <strong>2, 3 ou 4 graines</strong>, elles sont capturées. Les cases précédentes sont également raflées si elles respectent la même condition.</p>
+            </div>
+            <button class="btn-menu secondary" id="btn-back-home">Retour à l'accueil</button>
+        </div>
+    </div>
+
+    <div id="game-screen" class="game-container hidden">
+        <header class="game-header">
+            <h1 id="game-mode-title">SONGO</h1>
+            <div id="turn-indicator" class="turn-indicator">Tour : Joueur 1</div>
+        </header>
+
+        <div class="player-panel player-2">
+            <div class="avatar" id="p2-avatar">👤</div>
+            <div class="player-info">
+                <h2 id="p2-name">JOUEUR 2</h2>
+                <p>Graines : <span id="score-p2" class="score-val">0</span></p>
+            </div>
+        </div>
+
+        <div class="board-wrapper">
+            <div class="board">
+                <div class="row row-top">
+                    <div class="pit" data-index="13" id="pit-13"><span class="pit-label">13</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="12" id="pit-12"><span class="pit-label">12</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="11" id="pit-11"><span class="pit-label">11</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="10" id="pit-10"><span class="pit-label">10</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="9" id="pit-9"><span class="pit-label">9</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="8" id="pit-8"><span class="pit-label">8</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="7" id="pit-7"><span class="pit-label">7</span><div class="seeds-container"></div></div>
+                </div>
+
+                <div class="row row-bottom">
+                    <div class="pit" data-index="0" id="pit-0"><span class="pit-label">0</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="1" id="pit-1"><span class="pit-label">1</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="2" id="pit-2"><span class="pit-label">2</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="3" id="pit-3"><span class="pit-label">3</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="4" id="pit-4"><span class="pit-label">4</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="5" id="pit-5"><span class="pit-label">5</span><div class="seeds-container"></div></div>
+                    <div class="pit" data-index="6" id="pit-6"><span class="pit-label">6</span><div class="seeds-container"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="player-panel player-1">
+            <div class="avatar">👤</div>
+            <div class="player-info">
+                <h2>JOUEUR 1 (VOUS)</h2>
+                <p>Graines : <span id="score-p1" class="score-val">0</span></p>
+            </div>
+        </div>
+
+        <footer class="game-controls">
+            <button id="btn-undo" class="btn secondary-game-btn" disabled>↩️ ANNULER</button>
+            <button id="btn-quit" class="btn">QUITTER</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
